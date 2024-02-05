@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import 'primeflex/primeflex.scss';
+@import "primeng/resources/primeng.css";     
+
+body{
+    background: rgb(2,118,167);
+    background: linear-gradient(-45deg, rgba(2,118,167,1) 0%, rgba(34,178,178,1) 100%);
+    background-repeat: no-repeat ;
+    margin: 0;
+    padding: 0;
+ }

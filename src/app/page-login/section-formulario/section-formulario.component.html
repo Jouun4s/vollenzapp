@@ -1,0 +1,10 @@
+<section id="section-formulario">
+    <div> 
+    <button (click)="legal()"> opa </button>
+    <button (click)="deslegal()"> opa2 </button>
+
+     <h1>opa</h1>
+     <ng-container *ngIf="state === false; else acerto"> errou </ng-container>
+     <ng-template #acerto>  acertou </ng-template>
+    </div>
+</section>
