@@ -20,26 +20,26 @@ export class SectionGraficoComponent implements OnInit {
 
   ngOnInit() {
       const documentStyle = getComputedStyle(document.documentElement);
-      const textColor = documentStyle.getPropertyValue('--text-color');
-      const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
-      const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
+      const textColor = documentStyle.getPropertyValue('--surface-300');
+      const textColorSecondary = documentStyle.getPropertyValue('--surface-300');
+      const surfaceBorder = documentStyle.getPropertyValue('--surface-300');
 
       this.data = {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'jun', 'Jul'],
           datasets: [
               {
-                  label: 'First Dataset',
-                  data: [65, 59, 80, 81, 56, 55, 40],
+                  label: 'Histórico',
+                  data: [65, 59, 20, 81, 56, 55, 40],
                   fill: false,
-                  borderColor: documentStyle.getPropertyValue('#fffff'),
-                  tension: 0.4
+                  borderColor: documentStyle.getPropertyValue('--orange-500'),
+                  tension: 0.5
               },     
           ]
       };
 
       this.options = {
           maintainAspectRatio: false,
-          aspectRatio: 0.6,
+          aspectRatio: 1,
           plugins: {
               legend: {
                   labels: {
@@ -50,11 +50,11 @@ export class SectionGraficoComponent implements OnInit {
           scales: {
               x: {
                   ticks: {
-                      color: textColorSecondary
+                      color: textColorSecondary,  
                   },
                   grid: {
                       color: surfaceBorder,
-                      drawBorder: false
+                      drawBorder: false,
                   }
               },
               y: {

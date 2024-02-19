@@ -10,7 +10,7 @@ import { SliderModule } from 'primeng/slider';
   styleUrl: './section-imc.component.scss'
 })
 export class SectionImcComponent {
-  value!: number;
+  value!: 30;
 
 }
 

@@ -1,0 +1,26 @@
+<section class="historico_imc">
+    <div class="container flex justify-content-center mt-6 mx-3 p-0">
+
+        <h1 class="titulo flex justify-content-center ">IMC</h1>
+
+        <div class="tabela flex mt-7 p-0 mr-8">
+            <p-table [value]="products" [tableStyle]="{ 'max-width': '10rem' }">
+                <ng-template pTemplate="header">
+            <tr>
+                <th>Data</th>
+                <th>Indice</th>
+                <th>Estado</th>
+            </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{ product.Data }}</td>
+                <td>{{ product.Indice }}</td>
+                <td>{{ product.Estado }}</td>
+            </tr>
+                </ng-template>
+            </p-table>
+        </div>
+
+    </div>
+</section>

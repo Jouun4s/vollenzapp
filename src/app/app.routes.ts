@@ -4,6 +4,7 @@ import { PagePacienteComponent } from './page-paciente/page-paciente.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { LayoutComponent } from './layout/layout.component';
 import { PageMedidasComponent } from './page-medidas/page-medidas.component';
+import { PageHistoricoComponent } from './page-historico/page-historico.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +28,10 @@ export const routes: Routes = [
           path:"medidas",
           component: PageMedidasComponent
 
+        },
+        {
+          path:"historico",
+          component: PageHistoricoComponent
         }
       ]
 
