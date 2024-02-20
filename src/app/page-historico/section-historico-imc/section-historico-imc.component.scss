@@ -2,11 +2,20 @@
     background: #01616C;
     border-radius: 20px;
 }
-.titulo{
+.container h1{
     font-size: 25px;
     font-weight: 600;
     color: #F6F1EE;
     font-family: 'Poppins';
+    justify-content: center;
+    
+}
+.card{
+    background: #01616C;
+}
+.tabela{
+    margin-left: auto;
+    margin-top: 3rem;
     justify-content: center;
 }
 th{
