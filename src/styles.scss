@@ -6,11 +6,14 @@
 @import "primeicons/primeicons.css";
 
 
-
+::-webkit-scrollbar{
+    display: none;
+}
 body{
     background: rgb(2,118,167);
     background: linear-gradient(-45deg, rgba(2,118,167,1) 0%, rgba(34,178,178,1) 100%);
     background-repeat: no-repeat ;
     margin: 0;
     padding: 0;
+    
  }

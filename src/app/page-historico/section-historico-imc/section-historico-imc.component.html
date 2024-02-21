@@ -1,12 +1,12 @@
 <section class="historico_imc">
-    <div class="container flex justify-content-center flex-row flex-wrap mt-6 mx-3 p-0">
+    <div class="container mt-6 mx-3 p-0">
 
-     <!-- <div class="text-center m-0 flex justify-content-center">
-         <div class="flex justify-content-center ">
-                <h1>IMC</h1>
-            </div> 
-     </div> -->
-       <p-card header="IMC" class=" card text-center" >
+     <div class="text-center m-0 flex justify-content-center">
+         <div>
+            <h1>IMC e Peso</h1>
+         </div> 
+     </div>
+       <!-- <p-card header="IMC" class=" card text-center" >
             <div class="m-0 flex align-items-center justify-content-center ">
                 <p>Data</p>
                 <p-divider layout="vertical"></p-divider>
@@ -14,11 +14,11 @@
                 <p-divider layout="vertical"></p-divider>
                 Estado
         </div>
-        </p-card> 
+        </p-card>  -->
 
-        <div class="contab m-0 mt-8 text-center flex justify-content-center">
-            <div class="tabela">
-                <p-table [value]="products">
+        <div class="contab">
+            <div class="tabela p-3 mb-3">
+                <p-table [value]="products" styleClass="text-center ">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Data</th>
