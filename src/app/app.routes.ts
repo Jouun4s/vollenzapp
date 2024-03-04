@@ -5,6 +5,7 @@ import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { LayoutComponent } from './layout/layout.component';
 import { PageMedidasComponent } from './page-medidas/page-medidas.component';
 import { PageHistoricoComponent } from './page-historico/page-historico.component';
+import { PageCadastroComponent } from './page-cadastro/page-cadastro.component';
 
 export const routes: Routes = [
     {
@@ -14,7 +15,11 @@ export const routes: Routes = [
     },
   {
     path:"login",
-    component: PageLoginComponent
+    component: PageLoginComponent,
+  },
+  {
+    path:"cadastro",
+    component: PageCadastroComponent
   },
     {
       path:"",
