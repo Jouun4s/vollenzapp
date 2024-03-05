@@ -1,6 +1,30 @@
 <section class="dadospessoais">
-    <div class="flex flex-column gap-2">
-        <label for="NomePaciente">Nome do Paciente</label>
-        <input pInputText id="NomePaciente" aria-describedby="NomePaciente" [(ngModel)]="value" />
+    <div class="container flex flex-column justify-content-center "> 
+        <div class="card mb-3">
+            <label class="justify-content-start">Nome do paciente</label>
+            <input pInputText id="username" placeholder="José Munir Campagnoli" [(ngModel)]="value" />
+        </div>
+        <div class="card mb-3">
+            <label class="justify-content-start">Data de nascimento</label>
+             <p-inputMask [(ngModel)]="value1" mask="99/99/9999"  placeholder="09/04/2006" slotChar="dd/mm/yyyy"></p-inputMask>  
+        </div>
     </div>
+
+    <!-- <div class="container flex flex-column justify-content-center "> 
+        <div class="card mb-3">
+            <label class="justify-content-start">Tipo Sanguineo</label>
+            <input pInputText id="username" placeholder="AB+" [(ngModel)]="value" />
+        </div>
+        <div class="card mb-3">
+            <label class="justify-content-start">Especificação Médica</label>
+            <input pInputText id="username" placeholder="Osteoporose" [(ngModel)]="value" />
+        </div>
+        <div class="card mb-3">
+            <label class="justify-content-start">Estado do Paciente</label>
+            <input pInputText id="username" placeholder="AB+" [(ngModel)]="value" />
+        </div>
+        <div class="card mb-3">
+            <p-inputMask mask="9.99" [(ngModel)]="value1" placeholder="1.70"></p-inputMask>
+        </div>
+    </div> -->
 </section>
