@@ -19,4 +19,10 @@
         <h2>Altura</h2>
         <p>1.70m</p>
     </div>
+    
+    <div *ngFor="let d of data">
+        <ul>
+            <li> {{ d.nome }} - {{d.datanasc | date}} </li>
+        </ul>
+    </div>
 </section>
