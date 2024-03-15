@@ -1,38 +1,21 @@
-import { Injectable } from '@angular/core';
-import { Image } from '../models/image.model';
-import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs';
-import { Paciente } from '../models/paciente.model';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class BackendService {
-  private url = environment.url
-  private token = 'dDMlouQp5yjNU6YMJkJEoL4W0nW0rZKIQkV_bfUN'
-  private RETRY = 3
-  options = {
-    headers:{
-      'xc-token':`${this.token}`
-    }
+
+  constructor(private http: HttpClient) { }
+
+  getInfo(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/cadastro')
   }
 
-  convertImgArray(foto: any): Array<Image>{
-    if(!foto) return new Array()
 
-    return foto.map((novaFoto: any)=>{
-      return new Image().deserilize({
-        minetype:novaFoto.minetype,
-        url:novaFoto.url,
-        title:novaFoto.title,
-        size:novaFoto.size
-      })
-    })
+  login(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/login')
   }
 
-  getPaciente():Observable<Array<Paciente>>{
-    return this.http.get<any>(`${this.url}`)
-  }
-
-  constructor(private http:HttpClient) { }
 }
