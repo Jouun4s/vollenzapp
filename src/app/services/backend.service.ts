@@ -11,11 +11,7 @@ export class BackendService {
 
   getInfo(): Observable<any> {
     return this.http.get<any>('http://localhost:3000/cadastro')
-  }
+  } 
 
-
-  login(): Observable<any> {
-    return this.http.get<any>('http://localhost:3000/login')
-  }
 
 }

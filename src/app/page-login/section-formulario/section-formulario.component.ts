@@ -15,36 +15,43 @@ import { BackendService } from '../../services/backend.service';
 export class SectionFormularioComponent implements OnInit, OnDestroy {
 
   subscription: Subscription[] = []
+  data = new Array<any>()
+  errMsg = ''
+  value1: any
 
-  login = new Array<any>()
-
+  cpf_comparison: any
   constructor(private backend: BackendService){}
 
-  getLogin(){
-    let sub = this.backend.login().subscribe({
+  verify(cpf: any){
+    this.data.filter((res) => {
+      this.cpf_comparison = res.cpf
+  })
+
+  if(cpf === this.cpf_comparison){
+    console.log('DEU BOM', cpf, this.cpf_comparison)
+    this.errMsg = 'DEU BOM'
+
+  } else {
+    console.log('Deu ruim', cpf, this.cpf_comparison);
+    this.errMsg = 'DEU RUIM'
+  }
+  }
+
+  getData(){
+   let sub = this.backend.getInfo().subscribe({
       next: (res: any) => {
-        this.login = res
-        console.log(this.login)
+       this.data = res
+       console.log(this.data)
       }
     })
     this.subscription.push(sub)
   }
 
   ngOnInit(): void {
-    this.getLogin()
+    this.getData()
   }
   ngOnDestroy(): void {
     this.subscription.forEach(sub => sub.unsubscribe())
-  }
-  state: boolean = false
-  value1: string | undefined;
-
-  deslegal(){
-    this.state = false
-  }
-
-  legal(){
-   this.state = true
   }
 
 }

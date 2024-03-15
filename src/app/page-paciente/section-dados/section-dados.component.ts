@@ -11,26 +11,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './section-dados.component.html',
   styleUrl: './section-dados.component.scss'
 })
-export class SectionDadosComponent implements OnInit, OnDestroy {
-  subscription: Subscription[] = []
-  data = new Array<any>()
-
-  constructor(private backend: BackendService){}
-
-  getData(){
-   let sub = this.backend.getInfo().subscribe({
-      next: (res: any) => {
-       this.data = res
-       console.log(this.data)
-      }
-    })
-    this.subscription.push(sub)
-  }
-
-  ngOnInit(): void {
-    this.getData()
-  }
-  ngOnDestroy(): void {
-    this.subscription.forEach(sub => sub.unsubscribe())
-  }
+export class SectionDadosComponent  {
+  
 }

@@ -1,5 +1,8 @@
 <section id="section-formulario">
     <div class=" form flex align-items-center justify-content-center"> 
-        <p-inputMask mask="999-999-999-99" [(ngModel)]="value1" placeholder="xxx.xxx.xxx-xx"></p-inputMask>
+        <p-inputMask (change)="verify(value1)" mask="999-999-999-99" [(ngModel)]="value1" placeholder="xxx.xxx.xxx-xx"></p-inputMask>
     </div>
+    <ng-template [ngIf]="cpf_comparison">
+        {{ errMsg }}
+    </ng-template>
 </section>
