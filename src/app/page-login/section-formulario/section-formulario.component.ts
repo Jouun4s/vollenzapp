@@ -1,18 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputMaskModule } from 'primeng/inputmask';
 import { Subscription } from 'rxjs';
 import { BackendService } from '../../services/backend.service';
+import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-section-formulario',
   standalone: true,
-  imports: [CommonModule, FormsModule,  InputMaskModule],
+  imports: [CommonModule, FormsModule,  InputMaskModule, ButtonModule, RouterModule],
   templateUrl: './section-formulario.component.html',
   styleUrl: './section-formulario.component.scss'
 })
 export class SectionFormularioComponent implements OnInit, OnDestroy {
+
+  @Output() sendCpf = new EventEmitter<any>()
 
   subscription: Subscription[] = []
   data = new Array<any>()
@@ -29,6 +35,7 @@ export class SectionFormularioComponent implements OnInit, OnDestroy {
 
   if(cpf === this.cpf_comparison){
     console.log('DEU BOM', cpf, this.cpf_comparison)
+    this.backend.keepCpf(cpf)
     this.errMsg = 'DEU BOM'
 
   } else {

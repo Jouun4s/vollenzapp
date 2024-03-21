@@ -1,8 +1,17 @@
 <section id="section-formulario">
     <div class=" form flex align-items-center justify-content-center"> 
-        <p-inputMask (change)="verify(value1)" mask="999-999-999-99" [(ngModel)]="value1" placeholder="xxx.xxx.xxx-xx"></p-inputMask>
+        <p-inputMask mask="999-999-999-99" [(ngModel)]="value1" placeholder="000.000.000-00"></p-inputMask>
     </div>
     <ng-template [ngIf]="cpf_comparison">
         {{ errMsg }}
     </ng-template>
+    <div class="botao flex justify-content-center">
+        <div>
+          <p-button (onClick)="verify(value1)" routerLink="/paciente" styleClass="px-6" label="Confirmar" severity="warning"></p-button>
+        </div>
+      </div>
+      <div class="cadastrar flex justify-content-center">
+        <h2>Paciente não Cadastrado ? </h2>
+        <h1 routerLink="/cadastro">Clique Aqui</h1>
+      </div>
 </section>
