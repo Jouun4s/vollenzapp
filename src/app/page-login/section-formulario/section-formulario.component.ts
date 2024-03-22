@@ -18,13 +18,10 @@ import { RouterModule } from '@angular/router';
 })
 export class SectionFormularioComponent implements OnInit, OnDestroy {
 
-  @Output() sendCpf = new EventEmitter<any>()
-
   subscription: Subscription[] = []
   data = new Array<any>()
   errMsg = ''
   value1: any
-
   cpf_comparison: any
   constructor(private backend: BackendService){}
 
@@ -35,7 +32,7 @@ export class SectionFormularioComponent implements OnInit, OnDestroy {
 
   if(cpf === this.cpf_comparison){
     console.log('DEU BOM', cpf, this.cpf_comparison)
-    this.backend.keepCpf(cpf)
+    localStorage.setItem('cpf', cpf)
     this.errMsg = 'DEU BOM'
 
   } else {

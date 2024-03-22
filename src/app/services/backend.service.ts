@@ -6,16 +6,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BackendService {
-
-  constructor(private http: HttpClient) { }
-
+  private storage: Storage;
+  constructor(private http: HttpClient) {
+    this.storage = window.localStorage;
+   }
 
   getInfo(): Observable<any> {
     return this.http.get<any>('http://localhost:3000/cadastro')
   } 
 
-  keepCpf(cpf: any){
-   localStorage.setItem('cpf', cpf)
+  set(key: any, value: any): boolean{
+    if (this.storage) {
+      this.storage.setItem(key, JSON.stringify(value));
+      return true;
+    }
+    return false;
+  }
+
+  get(key: any) {
+    if (this.storage) { 
+      return JSON.parse(this.storage.getItem(key)!);
+    }
+    return null;
   }
 
 }

@@ -14,16 +14,5 @@ import { SectionSubmitComponent } from './section-submit/section-submit.componen
 })
 export class PageLoginComponent {
 
-  @Output() resendCpf = new EventEmitter<any>()
-
-  resend_cpf: any
-
-
-  method(cpf: any){
-    
-    this.resend_cpf = cpf
-    this.resendCpf.emit(this.resend_cpf)
-    console.log(this.resend_cpf, 'my cpf')
-   }
 
 }

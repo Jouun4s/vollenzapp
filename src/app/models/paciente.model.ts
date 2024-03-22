@@ -1,20 +1,17 @@
 import { Deserializar } from "./deserializar.model"
 import { Image } from "./image.model";
 
-export class Paciente implements Deserializar{
-    deserilize(data: any): this {
-        Object.assign(this, data);
-        return this
-    }
+export class Paciente{
+    id = ''
+    Altura = ''
     nome = ''
-    cpf = 0 
-    idade = 0
-    peso = 0
-    data_pesagem = ''
-    circusntancia_medica = ''
-    tipo_sanguineo = ''
-    circunstancia_paciente = ''
-    altura = 0 
-    foto = new Array<Image>
+    datanasc = ''
+    cpf = ''
+    tipo_Sangue = ''
+    Especificacao = ''
+    Estado = ''
+    valor =  ''
+    data_gravacao = ''
+    // foto = new Array<Image>
 
 }

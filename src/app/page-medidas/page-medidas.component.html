@@ -1,5 +1,93 @@
-<app-section-conta></app-section-conta>
-<app-section-peso></app-section-peso>
-<app-section-imc></app-section-imc>
-<app-section-grafico></app-section-grafico>
-<app-section-historico></app-section-historico>
+<section id="medidas">
+    <div id="conta">
+        <div class=" edicao_foto">
+            <div class="flex align-items-start justify-content-start mx-1 mt-1">
+                <div class="border-circle w-2rem h-2rem m-2 surface-200 flex align-items-center justify-content-center">
+                <i class="pi pi-user" routerLink="/paciente" style="font-size: 1.2rem; color: black"></i>
+                </div>
+            </div>
+          </div>
+        <h3 class="nome_paciente flex justify-content-start align-items-start">João Victor</h3>
+     </div>
+     <div id="peso">
+        <div class="flex align-items-center justify-content-center">
+            <div class="borda_peso border-circle border-3 border-white w-12rem h-12rem">
+                <h1>58Kg</h1>
+            </div>
+        </div>
+    </div>
+    <div id="imc">
+        <div class="container mt-5 mx-3">
+          <h1 class="titulo flex justify-content-center pt-2">IMC</h1>
+      
+          <div class="slider mb-3">
+            <p-slider [(ngModel)]="value"  name="value" ngDefaultControl class="slider2"></p-slider>
+          </div>
+      
+          <!-- legenda de bolas -->
+      
+          <div class="grid w-full text-white">
+            <!-- bolinha vermelha -->
+            <div class="col">
+              <div class="flex justify-content-center align-items-center">
+                <div
+                  class="bola_vermelha border-circle w-2rem h-2rem m-2 justify-content-center align-items-center"
+                ></div>
+                <span> 00 a 17 </span>
+              </div>
+              <!-- bolinha amarela -->
+              <div class="flex justify-content-center align-items-center">
+                <div
+                  class="bola_amarela border-circle w-2rem h-2rem m-2 justify-content-center align-items-center"
+                ></div>
+                <span>25 a 29</span>
+              </div>
+            </div>
+      
+            <div class="col">
+              <!-- bolinha verde -->
+              <div class="flex justify-content-center align-items-center">
+                <div
+                  class="bola_verde border-circle w-2rem h-2rem m-2 justify-content-center align-items-center"
+                ></div>
+                <span>18 a 24</span>
+              </div>
+              <!-- bolinha azul -->
+              <div class="flex justify-content-center align-items-center">
+                <div
+                  class="bola_azul border-circle w-2rem h-2rem m-2 justify-content-center align-items-center"
+                ></div>
+                <span>30 a 39</span>
+              </div>
+            </div>
+          </div>
+      
+          <div class=" grid_estados grid w-full text-white mt-1">
+            <div class="col flex justify-content-center">
+              <div class="flex justify-content-center">
+                <h3>Seu IMC é de</h3>
+                <h1 class="estados flex justify-content-center align-items-end">20</h1>
+              </div>
+            </div>
+            <div class="col justify-content-center">
+              <div class="flex justify-content-center ">
+                <h3>Seu estado é</h3>
+                <h1 class="estados2 flex justify-content-center align-items-end">Normal</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+     <div id="grafico" class="grafico flex justify-content-center">
+        <div class="container flex justify-content-center align-items-center align-items-center mt-3 px-4 py-3">
+            <p-chart type="line" [data]="data" [options]="options" class="graficos m-0 "></p-chart>
+        </div>
+    </div>
+    <section id="historico" class="historico flex pt-4 justify-content-center">
+        <div class="botao flex justify-content-center">
+            <div>
+              <p-button routerLink="/historico" styleClass="px-6" label="Histórico" severity="warning"></p-button>
+            </div>
+          </div>
+    </section>
+</section>
